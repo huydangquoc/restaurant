@@ -6,11 +6,21 @@
 	</div>
 <% end %>
 
-<% @food_items.each do |food_item| %>
-	<div class="card">
-		<div class="card-header"><%= food_item.name %></div>
-		<div class="card-block">
-			<%= image_tag food_item.image_url %>
-		</div>
+<% @food_items.in_groups_of(3) do |group| %>
+	<div class="row">
+		<% group.compact.each do |food_item| %>
+			<div class="col-sm-4">
+				<div class="card">
+					<%= image_tag food_item.image_url, class: 'card-img-top' %>
+					<div class="card-block">
+						<h4 class="card-title"><%= food_item.name %></h4>	
+						<p class="card-text"><%= food_item.description %></p>
+					</div>
+					<div class="card-block">
+						<a href="#" class="card-link btn btn-danger">Order</a>
+					</div>
+				</div>
+			</div>
+		<% end %>
 	</div>
 <% end %>
