@@ -1,2 +1,10 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="jumbotron">
+  <h1 class="display-3">THE BEST RESTAURANT EVER!</h1>
+  <p class="lead">You come here to eat, right?</p>
+  <hr class="m-y-2">
+  <p>Do you have money?</p>
+  <p class="lead"> 
+    <%= link_to "Menu", menu_path, class: 'btn btn-secondary btn-lg' %>
+    <%= link_to "Contact Us", contact_us_path, class: 'btn btn-secondary btn-lg' %>
+  </p>
+</div>
