@@ -1,4 +1,6 @@
 class FoodItem < ApplicationRecord
+	has_many :orders, dependent: :destroy
+
 	validates :name, :section, :price, presence: true
 	validates :price, numericality: true
 

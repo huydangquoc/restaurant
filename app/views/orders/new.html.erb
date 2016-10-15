@@ -1,0 +1,21 @@
+<h1>
+	<small>Order for</small> <%= @food_item.name %>
+</h1>
+
+<%= form_for [@food_item, Order.new] do |f| %>
+	<div class="form-group">
+		<%= f.label :name, class: 'form-control-label' %>
+		<%= f.text_field :name, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.label :phone, class: 'form-control-label' %>
+		<%= f.text_field :phone, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.label :address, class: 'form-control-label' %>
+		<%= f.text_area :address, class: 'form-control' %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit Order", class: 'btn btn-primary' %>
+	</div>
+<% end %>
