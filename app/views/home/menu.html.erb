@@ -2,7 +2,7 @@
 
 <% Section.all.each do |section| %>
 	<div class="btn-group" role="group" aria-label="Basic example">
-	  <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
+	  <%= link_to section, menu_path(section: section), class: "btn btn-secondary #{'active' if params[:section] == section}" %>
 	</div>
 <% end %>
 
