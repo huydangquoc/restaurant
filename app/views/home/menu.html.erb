@@ -1,1 +1,16 @@
 <h1>Menu</h1>
+
+<% Section.all.each do |section| %>
+	<div class="btn-group" role="group" aria-label="Basic example">
+	  <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
+	</div>
+<% end %>
+
+<% @food_items.each do |food_item| %>
+	<div class="card">
+		<div class="card-header"><%= food_item.name %></div>
+		<div class="card-block">
+			<%= image_tag food_item.image_url %>
+		</div>
+	</div>
+<% end %>
