@@ -7,11 +7,19 @@ class HomeController < ApplicationController
 	end
 
 	def menu
-		if params[:section]
-			@food_items = FoodItem.where section: params[:section]
+		if params[:search]
+			@food_items = FoodItem.where("lower(name) LIKE ?", "%#{params[:search]}%".downcase)
 		else
-			@food_items = FoodItem.all	
+			@food_items = FoodItem.all
 		end
+
+		if params[:section]
+			@food_items = @food_items.where section: params[:section]
+		end
+
+		if params[:sort_column]
+			@food_items = @food_items.order("#{params[:sort_column]} #{params[:sort_direction]}")
+		end 
 	end
 	
 end

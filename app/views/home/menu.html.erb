@@ -2,9 +2,21 @@
 
 <% Section.all.each do |section| %>
 	<div class="btn-group" role="group" aria-label="Basic example">
-	  <%= link_to section, menu_path(section: section), class: "btn btn-secondary #{'active' if params[:section] == section}" %>
+	  <%= link_to section, menu_path(section: section, search: params[:search]), class: "btn btn-secondary #{'active' if params[:section] == section}" %>
 	</div>
 <% end %>
+
+<div class="card card-block">
+	<%= form_tag nil, method: 'get' do %>
+	<%= hidden_field_tag :section, params[:section] %>
+	<%= hidden_field_tag :search, params[:search] %>
+		<div class="form-inline">
+			<%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]), class: 'form-control' %>
+			<%= select_tag :sort_direction, options_for_select([['Ascending', 'asc'], ['Descending', 'desc']]), class: 'form-control' %>
+			<%= submit_tag "Sort", class: 'btn btn-secondary' %> 
+		</div>  
+	<% end %>
+</div>
 
 <% @food_items.in_groups_of(3) do |group| %>
 	<div class="row">
@@ -18,7 +30,10 @@
 							<% if food_item.orders.size > 0 %>
 								<span class="tag tag-default"><%= food_item.orders.size %></span>
 							<% end %>
-						</h4>	
+						</h4>
+						<h3>
+							<span class="tag tag-success"><%= food_item.price %></span>
+						</h3>
 						<p class="card-text"><%= food_item.description %></p>
 					</div>
 					<div class="card-block">
