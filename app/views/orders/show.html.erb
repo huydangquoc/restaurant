@@ -16,7 +16,11 @@
     <b>Address:</b> <%= @order.address %>
     <hr>
     <p>TOTAL</p>
-    <%= @food_item.price + 20000 %>
+    <% if @order.discount_code == "CODERSCHOOL" %>
+      <%= (@food_item.price + 20000)/2 %>
+    <% else %>
+      <%= @food_item.price + 20000 %>
+    <% end %>
   </div>
   <div class="card-footer">
     <%= link_to 'Back', menu_path, class: 'card-link btn btn-secondary' %>
