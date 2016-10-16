@@ -6,7 +6,7 @@
     <p>YOUR ORDER</p>
     <b>Order Number:</b> <%= @order.id %><br>
     <b>Order Item:</b> <%= @food_item.name %><br>
-    <b>Placed order at:</b> <%= @order.created_at %><br>
+    <b>Placed order at:</b> <%= @order.created_at.to_time.strftime('%a %b %d %H:%M:%S') %><br>
     <b>Quantaty:</b> 1<br>
     <b>Delivery fee:</b> 20000
     <hr>
