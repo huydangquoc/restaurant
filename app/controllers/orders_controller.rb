@@ -11,11 +11,16 @@ class OrdersController < ApplicationController
 
 		if @order.save
 			flash[:success] = "Order submitted. Thank you!"
-			redirect_to menu_path
+			redirect_to food_item_order_path(id: @order.id)
 		else
 			flash[:error] = "Error: #{@order.errors.full_messages.to_sentence}"
 			render 'new'
 		end
+	end
+
+	def show
+		@order = Order.find params[:id]
+		@food_item = FoodItem.find @order.food_item_id
 	end
 
 	private

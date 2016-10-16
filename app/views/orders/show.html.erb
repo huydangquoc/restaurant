@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-block">
+    <h1 class="card-title">
+      Thank you <%= @order.name %> for placing order with us!
+    </h1>
+    <p>YOUR ORDER</p>
+    <b>Order Number:</b> <%= @order.id %><br>
+    <b>Order Item:</b> <%= @food_item.name %><br>
+    <b>Placed order at:</b> <%= @order.created_at %><br>
+    <b>Quantaty:</b> 1<br>
+    <b>Delivery fee:</b> 20000
+    <hr>
+    <p>DELIVERY INFO</p>
+    <b>Contact:</b> <%= @order.name %><br>
+    <b>Phone:</b> <%= @order.phone %><br>
+    <b>Address:</b> <%= @order.address %>
+    <hr>
+    <p>TOTAL</p>
+    <%= @food_item.price + 20000 %>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Back', menu_path, class: 'card-link btn btn-secondary' %>
+  </div>
+</div>
