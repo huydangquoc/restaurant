@@ -26,7 +26,7 @@
 					<%= image_tag food_item.image_url, class: 'card-img-top' %>
 					<div class="card-block">
 						<h4 class="card-title">
-							<%= food_item.name %>
+							<%= link_to food_item.name, food_item_path(food_item.id) %>
 							<% if food_item.orders.size > 0 %>
 								<span class="tag tag-default"><%= food_item.orders.size %></span>
 							<% end %>
