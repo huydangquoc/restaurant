@@ -1,14 +1,22 @@
 <h1>Menu</h1>
 
-<% Section.all.each do |section| %>
-	<div class="btn-group" role="group" aria-label="Basic example">
-	  <%= link_to section, menu_path(section: section, search: params[:search]), class: "btn btn-secondary #{'active' if params[:section] == section}" %>
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+	<div class="btn-group" role="group" aria-label="Section group">
+		<% Section.all.each do |section| %>
+		 <%= link_to section, menu_path(section: section, search: params[:search]), class: "btn btn-secondary #{'active' if params[:section] == section}" %>
+		<% end %>
 	</div>
-<% end %>
+	<div class="btn-group" role="group" aria-label="FoodType group">
+		<% FoodType.all.each do |food_type| %>
+			<%= link_to food_type, menu_path(food_type: food_type, search: params[:search]), class: "btn btn-secondary #{'active' if params[:food_type] == food_type}" %>
+		<% end %>
+	</div>
+</div>
 
 <div class="card card-block">
 	<%= form_tag nil, method: 'get' do %>
 	<%= hidden_field_tag :section, params[:section] %>
+	<%= hidden_field_tag :food_type, params[:food_type] %>
 	<%= hidden_field_tag :search, params[:search] %>
 		<div class="form-inline">
 			<%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]), class: 'form-control' %>

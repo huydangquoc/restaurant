@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 food_items = [
-  [ "Banh Mi", 25000 , "Breakfast" ],
-  [ "Banh Bao", 25000 , "Breakfast" ],
-  [ "Banh Day", 25000 , "Breakfast" ],
-  [ "Banh Gio", 25000 , "Breakfast" ],
-  [ "Banh Beo", 25000 , "Breakfast" ],
-  [ "Com Binh Dan", 30000 , "Lunch" ],
-  [ "Com Van Phong", 30000 , "Lunch" ],
-  [ "Com Hop", 30000 , "Lunch" ],
-  [ "Com Chien", 30000 , "Lunch" ],
-  [ "Com Tron", 30000 , "Lunch" ],
-  [ "Banh Xeo", 50000 , "Dinner" ],
-  [ "Banh Cuon", 50000 , "Dinner" ],
-  [ "Pho Bo", 50000 , "Dinner" ],
-  [ "Bun Bo Hue", 50000 , "Dinner" ],
-  [ "Hen Xuc Banh Trang", 50000 , "Dinner" ],
-  [ "Cafe Sua Da", 15000 , "Drinks" ],
-  [ "Sinh To Dau", 15000 , "Drinks" ],
-  [ "Kem Dua", 15000 , "Drinks" ],
-  [ "Soda Chanh Duong", 15000 , "Drinks" ],
-  [ "Tra Da", 15000 , "Drinks" ]
+  [ "Banh Mi", 25000 , "Breakfast", "Asian" ],
+  [ "Banh Bao", 25000 , "Breakfast", "Western" ],
+  [ "Banh Day", 25000 , "Breakfast", "Asian" ],
+  [ "Banh Gio", 25000 , "Breakfast", "Western" ],
+  [ "Banh Beo", 25000 , "Breakfast", "Asian" ],
+  [ "Com Binh Dan", 30000 , "Lunch", "Western" ],
+  [ "Com Van Phong", 30000 , "Lunch", "Asian" ],
+  [ "Com Hop", 30000 , "Lunch", "Western" ],
+  [ "Com Chien", 30000 , "Lunch", "Asian" ],
+  [ "Com Tron", 30000 , "Lunch", "Western" ],
+  [ "Banh Xeo", 50000 , "Dinner", "Asian" ],
+  [ "Banh Cuon", 50000 , "Dinner", "Western" ],
+  [ "Pho Bo", 50000 , "Dinner", "Asian" ],
+  [ "Bun Bo Hue", 50000 , "Dinner", "Western" ],
+  [ "Hen Xuc Banh Trang", 50000 , "Dinner", "Asian" ],
+  [ "Cafe Sua Da", 15000 , "Drinks", "Western" ],
+  [ "Sinh To Dau", 15000 , "Drinks", "Asian" ],
+  [ "Kem Dua", 15000 , "Drinks", "Western" ],
+  [ "Soda Chanh Duong", 15000 , "Drinks", "Asian" ],
+  [ "Tra Da", 15000 , "Drinks", "Western" ]
 ]
 
-food_items.each do |name, price, section|
-  FoodItem.create( name: name, price: price, section: section)
+food_items.each do |name, price, section, food_type|
+  FoodItem.create( name: name, price: price, section: section, food_type: food_type)
 end
