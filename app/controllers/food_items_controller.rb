@@ -10,6 +10,13 @@ class FoodItemsController < ApplicationController
   # GET /food_items/1
   # GET /food_items/1.json
   def show
+    @food_item = FoodItem.find params[:id]
+    if @food_item.food_view == nil
+      @food_item.food_view = 1
+    else
+      @food_item.food_view += 1
+    end
+    @food_item.save
   end
 
   # GET /food_items/new
@@ -25,6 +32,7 @@ class FoodItemsController < ApplicationController
   # POST /food_items.json
   def create
     @food_item = FoodItem.new(food_item_params)
+    @food_item.food_view = 0
 
     respond_to do |format|
       if @food_item.save

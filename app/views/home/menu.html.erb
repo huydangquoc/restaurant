@@ -19,7 +19,7 @@
 	<%= hidden_field_tag :food_type, params[:food_type] %>
 	<%= hidden_field_tag :search, params[:search] %>
 		<div class="form-inline">
-			<%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]), class: 'form-control' %>
+			<%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price'], ["Viewed", 'food_view']]), class: 'form-control' %>
 			<%= select_tag :sort_direction, options_for_select([['Ascending', 'asc'], ['Descending', 'desc']]), class: 'form-control' %>
 			<%= submit_tag "Sort", class: 'btn btn-secondary' %> 
 		</div>  
@@ -42,6 +42,9 @@
 						<h3>
 							<span class="tag tag-success"><%= food_item.price %></span>
 						</h3>
+						<% if food_item.food_view != nil %>
+							Viewed: <%= food_item.food_view %>
+						<% end %>
 						<p class="card-text"><%= food_item.description %></p>
 					</div>
 					<div class="card-block">

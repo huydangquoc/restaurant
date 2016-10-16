@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 food_items = [
-  [ "Banh Mi", 25000 , "Breakfast", "Asian" ],
-  [ "Banh Bao", 25000 , "Breakfast", "Western" ],
-  [ "Banh Day", 25000 , "Breakfast", "Asian" ],
-  [ "Banh Gio", 25000 , "Breakfast", "Western" ],
-  [ "Banh Beo", 25000 , "Breakfast", "Asian" ],
-  [ "Com Binh Dan", 30000 , "Lunch", "Western" ],
-  [ "Com Van Phong", 30000 , "Lunch", "Asian" ],
-  [ "Com Hop", 30000 , "Lunch", "Western" ],
-  [ "Com Chien", 30000 , "Lunch", "Asian" ],
-  [ "Com Tron", 30000 , "Lunch", "Western" ],
-  [ "Banh Xeo", 50000 , "Dinner", "Asian" ],
-  [ "Banh Cuon", 50000 , "Dinner", "Western" ],
-  [ "Pho Bo", 50000 , "Dinner", "Asian" ],
-  [ "Bun Bo Hue", 50000 , "Dinner", "Western" ],
-  [ "Hen Xuc Banh Trang", 50000 , "Dinner", "Asian" ],
-  [ "Cafe Sua Da", 15000 , "Drinks", "Western" ],
-  [ "Sinh To Dau", 15000 , "Drinks", "Asian" ],
-  [ "Kem Dua", 15000 , "Drinks", "Western" ],
-  [ "Soda Chanh Duong", 15000 , "Drinks", "Asian" ],
-  [ "Tra Da", 15000 , "Drinks", "Western" ]
+  [ "Banh Mi", 25000 , "Breakfast", "Asian", 1 ],
+  [ "Banh Bao", 25000 , "Breakfast", "Western", 2 ],
+  [ "Banh Day", 25000 , "Breakfast", "Asian", 3 ],
+  [ "Banh Gio", 25000 , "Breakfast", "Western", 4 ],
+  [ "Banh Beo", 25000 , "Breakfast", "Asian", 5 ],
+  [ "Com Binh Dan", 30000 , "Lunch", "Western", 6 ],
+  [ "Com Van Phong", 30000 , "Lunch", "Asian", 7 ],
+  [ "Com Hop", 30000 , "Lunch", "Western", 8 ],
+  [ "Com Chien", 30000 , "Lunch", "Asian", 9 ],
+  [ "Com Tron", 30000 , "Lunch", "Western", 10 ],
+  [ "Banh Xeo", 50000 , "Dinner", "Asian", 11 ],
+  [ "Banh Cuon", 50000 , "Dinner", "Western", 12 ],
+  [ "Pho Bo", 50000 , "Dinner", "Asian", 13 ],
+  [ "Bun Bo Hue", 50000 , "Dinner", "Western", 14 ],
+  [ "Hen Xuc Banh Trang", 50000 , "Dinner", "Asian", 15 ],
+  [ "Cafe Sua Da", 15000 , "Drinks", "Western", 16 ],
+  [ "Sinh To Dau", 15000 , "Drinks", "Asian", 17 ],
+  [ "Kem Dua", 15000 , "Drinks", "Western", 18 ],
+  [ "Soda Chanh Duong", 15000 , "Drinks", "Asian", 19 ],
+  [ "Tra Da", 15000 , "Drinks", "Western", 20 ]
 ]
 
-food_items.each do |name, price, section, food_type|
-  FoodItem.create( name: name, price: price, section: section, food_type: food_type)
+food_items.each do |name, price, section, food_type, food_view|
+  FoodItem.create( name: name, price: price, section: section, food_type: food_type, food_view: food_view)
 end
