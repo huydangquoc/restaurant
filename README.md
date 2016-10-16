@@ -2,9 +2,9 @@
 
 **Coder Restaurant** is a Ruby on Rails restaurant website let users order foods.
 
-Submitted by: **Your Name**
+Submitted by: **Huy Dang**
 
-Time spent: **XX** hours spent in total
+Time spent: **12** hours spent in total
 
 URL: **heroku-app-url**
 
@@ -41,7 +41,7 @@ URL: **heroku-app-url**
 * [x] User can see how many times each menu item has been viewed, and sort items by “most viewed”.
 * [ ] User can leave a review (1-5 stars) for each dish, along with a text review.
 * [ ] User can see reviews and an average review score.
-* [ ] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
+* [x] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
 * [ ] User can order more than one dish at a time.
 * [ ] User receives an email upon placing an order.
 * [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
@@ -68,7 +68,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name]
+    Copyright [2016] [Huy Dang]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
