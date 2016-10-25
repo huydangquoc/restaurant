@@ -1,0 +1,24 @@
+Thank you for placing order with us, <%= @order.name %>
+===============================================
+ 
+Your order detail
+-----------------
+Order No: <%= @order.id %>
+Order Item: <%= @order.food_item.name %>
+Place order at: <%= @order.created_at.to_time.strftime('%a %b %d %H:%M:%S') %>
+Quantaty: 1
+Delivery fee: 20000
+
+Delivery Info
+-------------
+Contact: <%= @order.name %>
+Phone: <%= @order.phone %>
+Address: <%= @order.address %>
+
+Total
+-----
+<% if @order.discount_code == "CODERSCHOOL" %>
+<%= (@order.food_item.price + 20000)/2 %>
+<% else %>
+<%= @order.food_item.price + 20000 %>
+<% end %>

@@ -1,31 +1,33 @@
 class OrdersController < ApplicationController
-	def new
-		@food_item = FoodItem.find params[:food_item_id ]
-	end
+  def new
+    @food_item = FoodItem.find params[:food_item_id ]
+  end
 
-	def create
-		@food_item = FoodItem.find params[:food_item_id ]
+  def create
+    @food_item = FoodItem.find params[:food_item_id ]
 
-		@order = Order.new(order_params)
-		@order.food_item = @food_item
+    @order = Order.new(order_params)
+    @order.food_item = @food_item
 
-		if @order.save
-			flash[:success] = "Order submitted. Thank you!"
-			redirect_to food_item_order_path(id: @order.id)
-		else
-			flash[:error] = "Error: #{@order.errors.full_messages.to_sentence}"
-			render 'new'
-		end
-	end
+    if @order.save
+      # Tell the UserMailer to send a welcome email after save
+      OrderMailer.place_order_email(@order).deliver_later
+      flash[:success] = "Order submitted. Thank you!"
+      redirect_to food_item_order_path(id: @order.id)
+    else
+      flash[:error] = "Error: #{@order.errors.full_messages.to_sentence}"
+      render 'new'
+    end
+  end
 
-	def show
-		@order = Order.find params[:id]
-		@food_item = FoodItem.find @order.food_item_id
-	end
+  def show
+    @order = Order.find params[:id]
+    @food_item = FoodItem.find @order.food_item_id
+  end
 
-	private
-	def order_params
-		params.require(:order).permit(:name, :phone, :address, :discount_code)
-	end
+  private
+  def order_params
+    params.require(:order).permit(:name, :phone, :address, :discount_code)
+  end
 
 end

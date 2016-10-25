@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for placing order with us, <%= @order.name %></h1>
+    <h3>Your order detail</h3>
+    <p>
+      <b>Order No:</b> <%= @order.id %>.<br>
+      <b>Order Item:</b> <%= @order.food_item.name %>.<br>
+      <b>Place order at:</b> <%= @order.created_at.to_time.strftime('%a %b %d %H:%M:%S') %>.<br>
+      <b>Quantaty:</b> 1<br>
+      <b>Delivery fee:</b> 20000
+    </p>
+    <h3>Delivery Info</h3>
+    <p>
+      <b>Contact:</b> <%= @order.name %><br>
+      <b>Phone:</b> <%= @order.phone %><br>
+      <b>Address:</b> <%= @order.address %>
+    </p>
+    <h3>Total</h3>
+    <p>
+      <% if @order.discount_code == "CODERSCHOOL" %>
+        <%= (@order.food_item.price + 20000)/2 %>
+      <% else %>
+        <%= @order.food_item.price + 20000 %>
+      <% end %>
+    </p>
+  </body>
+</html>
