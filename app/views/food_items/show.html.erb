@@ -21,6 +21,32 @@
   <div class="card-block">
     <%= image_tag @food_item.image_url, width: '640', class: 'card-img-top' %>
   </div>
+  <% if @food_item.reviews.count > 0 %>
+    <div class="card-block">
+      <h3>All feedback - <%= @food_item.average_review_score %> / 5</h3>
+      <%= render @food_item.reviews.order("created_at DESC") %>
+    </div>
+  <% end %>
+  <div class="card-block">
+    <h3>Leave feedback</h3>
+    <%= form_for [@food_item, @food_item.reviews.build] do |f| %>
+      <div class="form-group">
+        <%= f.label :score %>
+        <%= f.number_field :score, in: 1..5, step: 1, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :reviewer %>
+        <%= f.text_field :reviewer, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :feedback %>
+        <%= f.text_area :feedback, class: "form-control"  %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Send", class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
   <div class="card-footer">
     <%= link_to 'Back', menu_path, class: 'card-link btn btn-secondary' %>
   </div>

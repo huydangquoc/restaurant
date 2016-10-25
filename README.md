@@ -39,8 +39,8 @@ URL: **https://ancient-caverns-26645.herokuapp.com/**
 
 * [x] User can also filter by type of Cuisine.
 * [x] User can see how many times each menu item has been viewed, and sort items by “most viewed”.
-* [ ] User can leave a review (1-5 stars) for each dish, along with a text review.
-* [ ] User can see reviews and an average review score.
+* [x] User can leave a review (1-5 stars) for each dish, along with a text review.
+* [x] User can see reviews and an average review score.
 * [x] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
 * [ ] User can order more than one dish at a time.
 * [ ] User receives an email upon placing an order.
