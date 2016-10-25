@@ -43,8 +43,8 @@ URL: **https://ancient-caverns-26645.herokuapp.com/**
 * [x] User can see reviews and an average review score.
 * [x] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
 * [ ] User can order more than one dish at a time.
-* [ ] User receives an email upon placing an order.
-* [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
+* [x] User receives an email upon placing an order.
+* [x] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
 
 The following **additional** features are implemented:
 
